@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <title>Evaluează o știre!</title>
+
+
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+    <style>
+    	body{
+	   		background-color: lightblue;
+		}
+		h1, p{
+		    text-align: center;
+		}
+
+    	table{
+		    border: 1px solid black;
+		    table-layout: fixed;
+		    /*width: 90%;*/
+		    background-color: white;
+		    margin: auto;
+		    min-width: 400px;
+
+		    box-shadow: 10px 10px;
+
+		}
+
+		th, td{
+    		    border: 1px solid black;
+    			padding: 10px 10px;
+		}
+
+		tr:hover{
+			background-color:greenyellow;
+		}
+
+
+		th.title{
+		    width: 25%;
+		    /*padding-left: 4em;*/
+		}
+		th.description{
+		    width: 50%;
+		}
+		th.link{
+		    width: 10%;
+		}
+		th.status{
+		    width: 8%;
+		}
+		th.send{
+			width: 7%;
+		}
+
+
+		header{
+			background-color: #800000;
+
+		}
+		.nume{
+			font-size: 20px;
+		}
+
+		#logout{
+			float: left;
+		}
+
+		#nameOut{
+			margin: auto;
+		}
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <header>
+        <nav>
+            <div class="container">
+                <div class="dropdown">
+                    <label>Alege site-ul: </label>
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" th:text="${topSite} + ' &#x25BE;'">
+                        <span class="caret"></span>
+                    </button>
+
+                    <ul class="dropdown-menu" >
+                        <li th:each="site: ${sites}">
+                            <a href="#" th:href="@{/news(rss = ${site.getRssFeed()})}" th:text="${site.getName()}"></a>
+                        </li>
+                    </ul>
+
+
+                    <div id="nameOut" style="float: right;">
+                        <label th:text="${userName}" style="background-color: yellow;"></label>
+
+                        <form th:action="@{/logout}" method="post" style="float: right;">
+                            <input type="submit" value="Sign Out"/>
+                        </form>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </nav>
+
+
+
+    </header>
+
+
+    <h1>Știri ce vor fi introduse în baza de date</h1>
+
+
+
+    <table>
+        <thead>
+            <tr>
+                <th class="title">Titlu</th>
+                <th class="description">Descriere</th>
+                <th class="link">Link</th>
+                <th class="status">Relevanță</th>
+                <th class="send">Trimite</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr th:each="item : ${itemList}">
+                <td th:text="${item.getTitle()}"></td>
+                <td th:text="${item.getDescription()}"></td>
+                <td>
+                    <a class="btn btn-info" href="#" th:href="${item.getLink()}" th:target="_blank">Click aici</a>
+                </td>
+
+                <td>
+                    <select class="note" disabled="disabled" >
+                        <option value="none">None</option>
+                        <option value="1">Relevant</option>
+                        <option value="0">Irelevant</option>
+                    </select>
+                </td>
+
+                <td>
+                    <button type="button" class="send_news btn btn-primary disabled" disabled="disabled">Trimite</button>
+
+                    <ul style="display: none">
+                        <li th:text="${item.getTitle()}"></li>
+                        <li th:text="${item.getDescription()}"></li>
+                        <li th:text="${item.getLink()}"></li>
+                    </ul>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+<!--    <br/>
+    <div style="text-align:center;'">
+        <a class="btn btn-info" th:href="@{/myvotes}" style="min-width: 100px">Știrile notate de mine</a>
+    </div>-->
+
+
+
+    <script type="text/javascript" src="../static/js/tools.js" th:src="@{/js/tools.js}"></script>
+
+
+
+    <script type="text/javascript">
+
+		 $(".dropdown-menu li").on("click", function() {
+		     $(".dropdown-menu li").removeClass("active");
+		     $(this).addClass("active");
+		   });
+
+	</script>
+
+</body>
+
+</html>

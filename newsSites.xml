@@ -1,0 +1,86 @@
+<sites>
+	<site>
+		<name>ActiveNews</name>
+		<rss-feed>https://www.activenews.ro/rss</rss-feed>
+	</site>
+	<site>
+		<name>AGERPRES</name>
+		<rss-feed>https://www.agerpres.ro/home.rss</rss-feed>
+	</site>
+	<site>
+		<name>LIBERTATEA.RO</name>
+		<rss-feed>https://www.libertatea.ro/feed</rss-feed>
+	</site>
+	<site>
+		<name>TVR</name>
+		<rss-feed>http://www.tvr.ro/rss/stiri.xml</rss-feed>
+	</site>
+	<site>
+		<name>Romania TV</name>
+		<rss-feed>http://www.romaniatv.net/rss/stiri.xml</rss-feed>
+	</site>
+	<site>
+		<name>Realitatea TV</name>
+		<rss-feed>http://rss.realitatea.net/stiri.xml</rss-feed>
+	</site>
+	<site>
+		<name>HappyNews VaruSandel</name>
+		<rss-feed>http://happynews.varusandel.ro/feed/</rss-feed>
+	</site>
+	<site>
+		<name>BUSINESSNEWS.RO</name>
+		<rss-feed>http://businessnews.ro/index.php/feed/</rss-feed>
+	</site>
+	<site>
+		<name>Republica</name>
+		<rss-feed>https://republica.ro/rss</rss-feed>
+	</site>
+	<site>
+		<name>ReporterOnline.NET</name>
+		<rss-feed>http://reporteronline.net/feed/</rss-feed>
+	</site>
+	<site>
+		<name>SPORT.RO</name>
+		<rss-feed>http://www.sport.ro/rss</rss-feed>
+	</site>
+
+	<site>
+		<name>BZI</name>
+		<rss-feed>https://www.bzi.ro/rss</rss-feed>
+	</site>
+	<site>
+		<name>MEDIAFAX</name>
+		<rss-feed>http://www.mediafax.ro/rss/</rss-feed>
+	</site>
+	<site>
+		<name>CANCAN.RO</name>
+		<rss-feed>https://www.cancan.ro/feed</rss-feed>
+	</site>
+	<site>
+		<name>SOKANT.RO</name>
+		<rss-feed>http://sokant.ro/feed/</rss-feed>
+	</site>
+	<site>
+		<name>DIGISPORT.RO</name>
+		<rss-feed>https://www.digisport.ro/rss</rss-feed>
+	</site>
+	<site>
+		<name>ANAMARIAVASILE.COM</name>
+		<rss-feed>http://anamariavasile.com/feed/</rss-feed>
+	</site>
+	<site>
+		<name>DESANATATE.COM</name>
+		<rss-feed>http://desanatate.com/feed/</rss-feed>
+	</site>
+	<site>
+		<name>PRO TV</name>
+		<rss-feed>http://www.protv.ro/stiri/rss</rss-feed>
+	</site>
+	<site>
+		<name>ANTENA 3</name>
+		<rss-feed>https://www.antena3.ro/rss</rss-feed>
+	</site>
+	
+
+
+</sites>
